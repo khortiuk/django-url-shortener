@@ -1,11 +1,10 @@
-from django.urls import reverse_lazy
 from django.db import models
 from .utils import generate_key
 
 
 class Shortener(models.Model):
     key = models.CharField(max_length=5, null=False, blank=False, unique=True)
-    full_url = models.URLField(null=False, blank=False)
+    full_url = models.URLField(null=False, blank=False, unique=True)
     date_create = models.DateTimeField(auto_now_add=True)
     opened = models.IntegerField(default=0)
 
