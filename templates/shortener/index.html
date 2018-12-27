@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}URL Shorter{% endblock %}
+{% block body %}
+    <form action="/" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Generate">
+    </form>
+    {% if obj %}
+        Your short link:
+        <input type="text" value="{{ obj.key }}" readonly>
+    {% endif %}
+{% endblock %}

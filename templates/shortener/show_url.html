@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Your url{% endblock %}
+{% block body %}
+    <div class="text-center">
+        <h1>Congratulations you link:</h1>
+        <h3><a href="{{ url }}{{ obj.key }}">{{ url }}{{ obj.key }}</a></h3>
+    </div>
+{% endblock %}
